@@ -1,0 +1,345 @@
+#+TITLE: Simple.css and Org-mode Feature Demo
+#+DATE: 2026-04-12
+#+TAGS: css web design
+#+DRAFT: false
+
+#+MACRO: kbd @@html:<kbd>$1</kbd>@@
+#+MACRO: mark @@html:<mark>$1</mark>@@
+
+This post tests many of the HTML elements styled by [[https://simplecss.org][Simple.css]]. It serves as both a visual showcase and a reference for writing rich blog posts with org-mode.
+
+#+TOC: headlines 2
+
+* Typography
+
+All the standard typography elements are supported. This paragraph is plain body text set at Simple.css's default sizing.
+
+* Headings (this is h2)
+
+Since the post title is already an =h1=, org =*= headings render as =h2=, =**= as =h3=, and so on.
+
+** This is h3
+
+Content under an h3 heading.
+
+*** This is h4
+
+Content under an h4 heading.
+
+**** This is h5
+
+Content under an h5 heading.
+
+** Inline formatting
+
+Org-mode supports many inline styles that map to HTML elements:
+
+- *Bold text* for strong emphasis
+- /Italic text/ for regular emphasis
+- _Underlined text_ for annotations
+- =Inline code= for code references
+- +Strikethrough text+ for deletions
+
+For elements like =<mark>= and =<kbd>= where Org has no native equivalent, we defined custom macros at the top of this file (=#+MACRO: kbd ...=). This drastically cleans up your writing flow compared to writing raw HTML:
+
+- {{{mark(Highlighted text)}}} using the ={{{mark(...)}}}= macro
+- Keyboard shortcuts like {{{kbd(Ctrl)}}} + {{{kbd(C)}}} using the ={{{kbd(...)}}}= macro
+
+You can also combine org styles: */bold italic/*, _/underlined italic/_.
+
+** Links
+
+Here's a [[https://example.com][standard hyperlink]]. Links are styled with the accent color and have a hover effect that removes the underline.
+
+** Buttons
+
+Simple.css styles =<button>= elements and links with the =button= class. You can just use inline HTML snippets for them safely inside paragraphs!
+
+@@html:<a href="https://example.com">I'm a hyperlink</a>@@
+@@html:<button>I'm a button</button>@@
+@@html:<a class="button" href="https://example.com">I'm a button with a link</a>@@
+
+* Lists
+
+** Unordered lists
+
+A simple bulleted list:
+
+- First item
+- Second item
+  - Nested item A
+  - Nested item B
+    - Deeply nested item
+- Third item
+
+** Ordered lists
+
+A numbered list:
+
+1. Do this thing first
+2. Then do this thing
+3. Finally, do the other thing
+   1. Sub-step one
+   2. Sub-step two
+
+** Description lists
+
+- Emacs :: An extensible, customizable, self-documenting text editor.
+- Org-mode :: A document editing, formatting, and organizing mode.
+- Simple.css :: A classless CSS framework for semantic HTML.
+
+* Blockquotes
+
+Sometimes you want to quote someone:
+
+#+BEGIN_QUOTE
+Friends don't spy; true friendship is about privacy, too.
+
+--- Stephen King
+#+END_QUOTE
+
+Blockquotes can also contain multiple paragraphs:
+
+#+BEGIN_QUOTE
+The best way to predict the future is to invent it.
+
+Every technology has its dark side, but it doesn't mean we should stop innovating.
+
+--- Alan Kay
+#+END_QUOTE
+
+* Code blocks
+
+Inline code like =variable-name= is useful, but sometimes you need a full code block.
+
+** Emacs Lisp
+
+#+BEGIN_SRC emacs-lisp
+(defun hello-world ()
+  "Display a greeting message."
+  (interactive)
+  (message "Hello, %s!" user-full-name))
+
+(global-set-key (kbd "C-c h") #'hello-world)
+#+END_SRC
+
+** Python
+
+#+BEGIN_SRC python
+def fibonacci(n: int) -> list[int]:
+    """Generate the first n Fibonacci numbers."""
+    sequence = []
+    a, b = 0, 1
+    for _ in range(n):
+        sequence.append(a)
+        a, b = b, a + b
+    return sequence
+
+if __name__ == "__main__":
+    print(fibonacci(10))
+#+END_SRC
+
+** Shell
+
+#+BEGIN_SRC bash
+#!/bin/bash
+# A simple script to greet users
+
+NAME="${1:-World}"
+echo "Hello, ${NAME}!"
+
+for i in $(seq 1 5); do
+    echo "  Count: $i"
+done
+
+# Testing a very long line to ensure code blocks have horizontal scroll functionality
+find . -type f -name "*.org" -exec awk '/#\+BEGIN_SRC/ {src=1; next} /#\+END_SRC/ {src=0; next} src {print}' {} \; | grep -i "echo" | sort | uniq -c | sort -nr
+#+END_SRC
+
+** CSS
+
+#+BEGIN_SRC css
+body {
+  color: var(--text);
+  background: var(--bg);
+  font-size: 1.15rem;
+  line-height: 1.5;
+  margin: 0;
+}
+#+END_SRC
+
+* Tables
+
+Tables are automatically styled with alternating row highlights:
+
+| Name    | Language    | Year |  Stars |
+|---------+-------------+------+--------|
+| Linux   | C           | 1991 | 180000 |
+| Emacs   | Emacs Lisp  | 1976 |   4500 |
+| Neovim  | C / Lua     | 2014 |  82000 |
+| VS Code | TypeScript  | 2015 | 165000 |
+| Helix   | Rust        | 2021 |  34000 |
+
+A larger table to test horizontal overflow:
+
+| Editor  | Language   | Year | License     | Platform       | Plugin System | LSP Support | Treesitter | Primary Focus      | Initial Release | Memory Footprint | Startup Time | Default Keybindings | Support  |
+|---------+------------+------+-------------+----------------+---------------+-------------+------------+--------------------+-----------------+------------------+--------------+---------------------+----------|
+| Emacs   | Emacs Lisp | 1976 | GPL-3.0     | Cross-platform | Yes (elisp)   | Via eglot   | Yes        | Extensibility      | 1976            | Medium-High      | Slow         | Emacs               | Active   |
+| Neovim  | C / Lua    | 2014 | Apache-2.0  | Cross-platform | Yes (Lua)     | Built-in    | Built-in   | Modern Vim         | 2015            | Low              | Very Fast    | Vim                 | Active   |
+| VS Code | TypeScript | 2015 | MIT         | Electron       | Yes (JS/TS)   | Built-in    | Partial    | Out-of-box exp     | 2015            | High             | Slow         | IDE-like            | Active   |
+| Helix   | Rust       | 2021 | MPL-2.0     | Terminal       | Planned       | Built-in    | Built-in   | Modal editing      | 2021            | Very Low         | Instant      | Kakoune-inspired    | Active   |
+| Zed     | Rust       | 2024 | GPL-3.0     | Native         | Yes (Wasm)    | Built-in    | Built-in   | Performance, Collab| 2024            | Low              | Instant      | VS Code-like        | Active   |
+
+* Images
+:PROPERTIES:
+:CUSTOM_ID: images-section
+:END:
+
+Images are displayed full-width inside the =main= element. Simple.css styles =<figure>= with rounded corners and =<figcaption>= for captions.
+
+You don't need raw HTML to apply classes, alternate text, or inline styles! You can use the powerfully native =#+ATTR_HTML:= directive:
+
+#+ATTR_HTML: :alt A scenic mountain view :class responsive-image :width 100%
+#+CAPTION: A placeholder image demonstrating figure and caption support
+[[https://picsum.photos/800/400.jpg]]
+
+* Advanced Developer Features
+
+Because you are using Org-mode to build this site, you have access to some incredible tools for technical writing that standard Markdown lacks.
+
+** Seamless Cross-Referencing
+
+You can give any section a custom ID using Org properties, just like the Images section above using =:CUSTOM_ID: images-section=. You can then cleanly link to it from anywhere: [[#images-section][Jump back up to the Images section]].
+
+** Live Code Transclusion
+
+Writing tutorials? Don't copy-paste your code; it goes out of date quickly! Just include the live file directly from your repository:
+
+#+BEGIN_example
+#+INCLUDE: "./path/to/script.sh" src bash
+#+END_example
+
+When org-grimoire builds your site, it will grab the live contents of that file and insert them exactly where the =#+INCLUDE= directive is.
+
+** Code Execution & Results (Org Babel)
+
+You can tell Org to execute your code blocks during generation and embed the actual stdout into your blog. This is perfect for data science or technical blogs.
+
+#+BEGIN_SRC bash :exports both :results output
+echo "Hello from Org Babel! The current date is: $(date '+%Y-%m-%d')"
+uname -a | awk '{print "OS: "$1" "$3}'
+#+END_SRC
+
+When Org-mode evaluates the block above, it will output both the source code and the exact results of the code execution underneath it.
+
+* HTML5 Native Tags (Aside, Details, Notice)
+
+Org-mode by default exports most special blocks as =<div>= elements (e.g. =<div class="aside">=). To use Simple.css's native styles for =<aside>= and =<details>=, you can either use raw HTML blocks, or add a small configuration to your Emacs =init.el= to output native tags:
+
+#+BEGIN_SRC emacs-lisp
+(require 'ox-html)
+
+(defun my-org-html-special-block-advice (orig-fn special-block contents info)
+  "Convert #+begin_aside, #+begin_details, #+begin_article, and #+begin_section into native HTML5 tags."
+  (let* ((block-type (org-element-property :type special-block))
+         (type (downcase block-type)))
+    (if (member type '("aside" "details" "article" "section"))
+        (format "<%s>\n%s\n</%s>\n" type (or contents "") type)
+      (funcall orig-fn special-block contents info))))
+
+(advice-add 'org-html-special-block :around #'my-org-html-special-block-advice)
+#+END_SRC
+
+** Details and Accordions
+
+With the above configuration, you can use native org blocks for interactive details. You can provide the =<summary>= element using a small inline HTML snippet:
+
+#+begin_details
+#+HTML: <summary>Click to expand: What is Simple.css?</summary>
+Simple.css is a classless CSS framework that makes semantic HTML look good without adding any classes. Just write proper HTML and it handles the styling.
+#+end_details
+
+#+begin_details
+#+HTML: <summary>Click to expand: Why use classless CSS?</summary>
+Classless CSS frameworks let you focus on content and semantics rather than worrying about styling classes. They're perfect for blogs, documentation, and personal sites.
+#+end_details
+
+If you prefer, you can still use raw HTML for accordion groups (where only one opens at a time) to access the =name= attribute:
+
+#+BEGIN_export html
+<details name="faq">
+  <summary>FAQ 1: Is Simple.css responsive?</summary>
+  <p>Yes! Simple.css is fully responsive and works great on mobile devices, tablets, and desktops.</p>
+</details>
+<details name="faq">
+  <summary>FAQ 2: Does it support dark mode?</summary>
+  <p>Absolutely. Simple.css automatically adapts to the user's OS-level dark mode preference using <code>prefers-color-scheme</code>.</p>
+</details>
+<details name="faq">
+  <summary>FAQ 3: Can I customize it?</summary>
+  <p>Yes, Simple.css uses CSS custom properties (variables) that you can override to change colors, fonts, and spacing.</p>
+</details>
+#+END_export
+
+* Notice Boxes
+
+You can use the native =#+begin_notice= block to create Simple.css notice boxes:
+
+#+begin_notice
+This is a notice box written with a native org special block. It's useful for calling out important snippets of information to your readers.
+#+end_notice
+
+* Aside
+
+With the Emacs Lisp advice above, you can write native =#+begin_aside= blocks:
+
+
+#+begin_aside
+This is an aside element written with a native org special block. In Simple.css, it floats to the right and stands out from the main content.
+#+end_aside
+
+Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+
+Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+
+* Horizontal Rules
+
+You can separate sections with a horizontal rule:
+
+-----
+
+Content continues after the rule.
+
+* Layout Containers
+
+With the Emacs Lisp hook included above, you can also inject native =<article>= and =<section>= tags directly into your post!
+
+** Articles (Cards)
+
+Simple.css styles the =<article>= element like a distinct "Card". It provides special typography for the first heading inside it (=margin-top: 1rem=). 
+
+Because standard Org structural headings (=**=) will break out of a special block, you must inject the heading manually using raw HTML if you want that specific typography!
+
+#+begin_article
+#+HTML: <h2>Featured Insight</h2>
+This entire block of text is enclosed in a native org special block called =#+begin_article=. 
+Notice how the heading now perfectly matches the Simple.css demo page!
+#+end_article
+
+** Sections
+
+Similarly, Simple.css styles the =<section>= element with thick top and bottom dividers and specifically tightened typography for the leading header.
+
+#+begin_section
+#+HTML: <h2>A Major Divider</h2>
+This text is wrapped inside a =#+begin_section= block.
+You can use these to break very long tutorials into distinctly separated visual pieces, retaining perfect typography.
+#+end_section
+
+* Testing footnotes
+
+Simple.css also handles footnote styling well. Here's a sentence with a footnote[fn:1] and another one[fn:2].
+
+[fn:1] This is the first footnote providing additional context.
+
+[fn:2] Footnotes are great for citations and tangential information without cluttering the main text.

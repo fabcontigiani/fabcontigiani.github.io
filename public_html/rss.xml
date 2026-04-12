@@ -4,13 +4,22 @@
   <title>blog</title>
   <link>https://fabcontigiani.github.io</link>
   <description>My site</description>
-  <lastBuildDate>Sun, 12 Apr 2026 19:37:58 +0000</lastBuildDate>
+  <lastBuildDate>Sun, 12 Apr 2026 21:18:51 +0000</lastBuildDate>
   <item>
     <title>My First Post</title>
     <link>https://fabcontigiani.github.io/post/my-first-post.html</link>
     <guid>https://fabcontigiani.github.io/post/my-first-post.html</guid>
     <pubDate>Sun, 12 Apr 2026 03:00:00 +0000</pubDate>
     <category>emacs</category>
+  </item>
+  <item>
+    <title>Simple.css and Org-mode Feature Demo</title>
+    <link>https://fabcontigiani.github.io/post/simple-css-demo.html</link>
+    <guid>https://fabcontigiani.github.io/post/simple-css-demo.html</guid>
+    <pubDate>Sun, 12 Apr 2026 03:00:00 +0000</pubDate>
+    <category>css</category>
+    <category>web</category>
+    <category>design</category>
   </item>
   <item>
     <title>About</title>

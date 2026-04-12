@@ -4,11 +4,17 @@
   <link href="https://fabcontigiani.github.io"/>
   <link rel="self" href="https://fabcontigiani.github.io/atom.xml"/>
   <id>https://fabcontigiani.github.io/</id>
-  <updated>2026-04-12T19:37:58Z</updated>
+  <updated>2026-04-12T21:18:51Z</updated>
   <entry>
     <title>My First Post</title>
     <link href="https://fabcontigiani.github.io/post/my-first-post.html"/>
     <id>https://fabcontigiani.github.io/post/my-first-post.html</id>
+    <updated>2026-04-12T03:00:00Z</updated>
+  </entry>
+  <entry>
+    <title>Simple.css and Org-mode Feature Demo</title>
+    <link href="https://fabcontigiani.github.io/post/simple-css-demo.html"/>
+    <id>https://fabcontigiani.github.io/post/simple-css-demo.html</id>
     <updated>2026-04-12T03:00:00Z</updated>
   </entry>
   <entry>

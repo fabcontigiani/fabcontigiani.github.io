@@ -1,10 +1,9 @@
 /* ── Overrides for Simple.css ──────────────────────────────────── */
 /* Only org-grimoire-specific styles that Simple.css doesn't cover */
 
-/* ── Inline code ────────────────────────────────────────────────── */
-:not(pre) > code {
-  font-family: "SFMono-Regular", Consolas, "Liberation Mono", Menlo,
-               monospace;
+/* Org-mode exports _underline_ as <span class="underline"> */
+.underline {
+  text-decoration: underline;
 }
 
 /* ── Code blocks (org-export) ───────────────────────────────────── */
@@ -16,11 +15,38 @@
   overflow: hidden;
 }
 
+/* ── Images (org-export) ────────────────────────────────────────── */
+/* Org-mode exports images as <div class="figure"> instead of <figure> */
+.figure {
+  margin: 0;
+  padding: 0;
+}
+
+.figure img {
+  max-width: 100%;
+  height: auto;
+  border-radius: var(--standard-border-radius);
+}
+
+.figure p {
+  margin: 0;
+}
+
+.figure p:last-child {
+  padding: 0.2rem 0.5rem;
+  color: var(--text-light);
+  font-size: 0.9rem;
+  text-align: center;
+}
+
+.figure-number {
+  display: none;
+}
+
+
 .org-src-container pre {
   margin: 0;
   padding: 1rem;
-  font-family: "SFMono-Regular", Consolas, "Liberation Mono", Menlo,
-               monospace;
   font-size: 0.875rem;
   line-height: 1.6;
   overflow-x: auto;
@@ -47,7 +73,9 @@
 .org-src-container:has(pre.src-shell)::before {
   content: '';
   position: absolute;
-  top: 0; left: 0; right: 0;
+  top: 0;
+  left: 0;
+  right: 0;
   height: 28px;
   background: var(--accent-bg);
   background-image:
@@ -72,9 +100,19 @@
   transition: opacity 0.15s, color 0.15s;
 }
 
-.org-src-container:hover .copy-btn { opacity: 1; }
-.copy-btn:hover { color: var(--accent); border-color: var(--accent); }
-.copy-btn.copied { color: #16a34a; border-color: #16a34a; }
+.org-src-container:hover .copy-btn {
+  opacity: 1;
+}
+
+.copy-btn:hover {
+  color: var(--accent);
+  border-color: var(--accent);
+}
+
+.copy-btn.copied {
+  color: #16a34a;
+  border-color: #16a34a;
+}
 
 /* ── Post listing ───────────────────────────────────────────────── */
 .post-list {
@@ -90,7 +128,9 @@
   border-bottom: 1px solid var(--border);
 }
 
-.post-item:last-child { border-bottom: none; }
+.post-item:last-child {
+  border-bottom: none;
+}
 
 .post-item-title {
   font-size: 1.1rem;
@@ -115,18 +155,19 @@
 }
 
 /* ── Post page ──────────────────────────────────────────────────── */
-.post-header { margin-bottom: 2rem; }
-
-.post-meta {
-  display: flex;
-  gap: 1rem;
-  align-items: center;
-  font-size: 0.875rem;
-  color: var(--text-light);
-  margin-bottom: 0.75rem;
+.reading-time:empty {
+  display: none;
 }
 
-.reading-time:empty { display: none; }
+/* ── Tables ─────────────────────────────────────────────────────── */
+/* Org-mode doesn't wrap tables in <figure> like Simple.css expects */
+table {
+  display: block;
+  max-width: 100%;
+  width: max-content;
+  overflow-x: auto;
+  white-space: nowrap;
+}
 
 /* ── Tags ───────────────────────────────────────────────────────── */
 .grimoire-tags {
@@ -136,7 +177,9 @@
   margin: 0.5rem 0;
 }
 
-.grimoire-tags:empty { display: none; }
+.grimoire-tags:empty {
+  display: none;
+}
 
 .grimoire-tag {
   font-size: 0.8rem;
@@ -164,7 +207,11 @@
   margin: 1.5rem 0;
 }
 
-.tag-item { display: flex; align-items: center; gap: 0.4rem; }
+.tag-item {
+  display: flex;
+  align-items: center;
+  gap: 0.4rem;
+}
 
 .tag-item-count {
   font-size: 0.8rem;
@@ -204,7 +251,9 @@
   padding-left: 1.25rem;
 }
 
-#text-table-of-contents li { margin: 0.2rem 0; }
+#text-table-of-contents li {
+  margin: 0.2rem 0;
+}
 
 /* ── Footnotes ──────────────────────────────────────────────────── */
 .footnotes {
@@ -215,41 +264,230 @@
   color: var(--text-light);
 }
 
-.footdef { display: flex; gap: 0.5rem; }
-.footref { font-size: 0.75em; vertical-align: super; }
+.footdef {
+  display: flex;
+  gap: 0.5rem;
+}
+
+.footref {
+  font-size: 0.75em;
+  vertical-align: super;
+}
 
 /* ── Comments ──────────────────────────────────────────────────── */
 .comments {
   margin-top: 3rem;
   padding-top: 1.5rem;
-  border-top: 1px solid var(--border);
 }
 
 /* ── Syntax highlighting (org-export classes) ───────────────────── */
-.org-keyword           { color: #0369a1; }
-.org-type              { color: #0f766e; }
-.org-function-name     { color: #7c3aed; }
-.org-function-call     { color: #7c3aed; }
-.org-variable-name     { color: var(--text); }
-.org-variable-use      { color: var(--text); }
-.org-preprocessor      { color: #0f766e; }
-.org-builtin           { color: #7c3aed; }
-.org-constant          { color: #b45309; font-weight: bold; }
-.org-string            { color: #15803d; }
-.org-comment           { color: #9ca3af; font-style: italic; }
-.org-comment-delimiter { color: #9ca3af; font-style: italic; }
-.org-doc               { color: #9ca3af; font-style: italic; }
-.org-doc-markup        { color: #9ca3af; font-weight: bold; }
-.org-negation-char     { color: #6b7280; }
-.org-warning-1         { color: #d97706; font-weight: bold; }
+.org-keyword {
+  color: #0369a1;
+}
+
+.org-type {
+  color: #0f766e;
+}
+
+.org-function-name {
+  color: #7c3aed;
+}
+
+.org-function-call {
+  color: #7c3aed;
+}
+
+.org-variable-name {
+  color: var(--text);
+}
+
+.org-variable-use {
+  color: var(--text);
+}
+
+.org-preprocessor {
+  color: #0f766e;
+}
+
+.org-builtin {
+  color: #7c3aed;
+}
+
+.org-constant {
+  color: #b45309;
+  font-weight: bold;
+}
+
+.org-string {
+  color: #15803d;
+}
+
+.org-comment {
+  color: #9ca3af;
+  font-style: italic;
+}
+
+.org-comment-delimiter {
+  color: #9ca3af;
+  font-style: italic;
+}
+
+.org-doc {
+  color: #9ca3af;
+  font-style: italic;
+}
+
+.org-doc-markup {
+  color: #9ca3af;
+  font-weight: bold;
+}
+
+.org-negation-char {
+  color: #6b7280;
+}
+
+.org-warning-1 {
+  color: #d97706;
+  font-weight: bold;
+}
 
 /* Rainbow delimiters */
-.org-rainbow-delimiters-depth-1 { color: #555; }
-.org-rainbow-delimiters-depth-2 { color: #2563eb; }
-.org-rainbow-delimiters-depth-3 { color: #7c3aed; }
-.org-rainbow-delimiters-depth-4 { color: #0f766e; }
-.org-rainbow-delimiters-depth-5 { color: #b45309; }
-.org-rainbow-delimiters-depth-6 { color: #0369a1; }
-.org-rainbow-delimiters-depth-7 { color: #15803d; }
-.org-rainbow-delimiters-depth-8 { color: #7c3aed; }
-.org-rainbow-delimiters-depth-9 { color: #0f766e; }
+.org-rainbow-delimiters-depth-1 {
+  color: #555;
+}
+
+.org-rainbow-delimiters-depth-2 {
+  color: #2563eb;
+}
+
+.org-rainbow-delimiters-depth-3 {
+  color: #7c3aed;
+}
+
+.org-rainbow-delimiters-depth-4 {
+  color: #0f766e;
+}
+
+.org-rainbow-delimiters-depth-5 {
+  color: #b45309;
+}
+
+.org-rainbow-delimiters-depth-6 {
+  color: #0369a1;
+}
+
+.org-rainbow-delimiters-depth-7 {
+  color: #15803d;
+}
+
+.org-rainbow-delimiters-depth-8 {
+  color: #7c3aed;
+}
+
+.org-rainbow-delimiters-depth-9 {
+  color: #0f766e;
+}
+
+/* ── Dark mode syntax highlighting ──────────────────────────────── */
+@media (prefers-color-scheme: dark) {
+  .org-keyword {
+    color: #7dd3fc;
+  }
+
+  .org-type {
+    color: #5eead4;
+  }
+
+  .org-function-name {
+    color: #c4b5fd;
+  }
+
+  .org-function-call {
+    color: #c4b5fd;
+  }
+
+  .org-variable-name {
+    color: var(--text);
+  }
+
+  .org-variable-use {
+    color: var(--text);
+  }
+
+  .org-preprocessor {
+    color: #5eead4;
+  }
+
+  .org-builtin {
+    color: #c4b5fd;
+  }
+
+  .org-constant {
+    color: #fbbf24;
+  }
+
+  .org-string {
+    color: #86efac;
+  }
+
+  .org-comment {
+    color: #6b7280;
+  }
+
+  .org-comment-delimiter {
+    color: #6b7280;
+  }
+
+  .org-doc {
+    color: #9ca3af;
+  }
+
+  .org-doc-markup {
+    color: #9ca3af;
+  }
+
+  .org-negation-char {
+    color: #9ca3af;
+  }
+
+  .org-warning-1 {
+    color: #fbbf24;
+  }
+
+  /* Rainbow delimiters – dark */
+  .org-rainbow-delimiters-depth-1 {
+    color: #9ca3af;
+  }
+
+  .org-rainbow-delimiters-depth-2 {
+    color: #60a5fa;
+  }
+
+  .org-rainbow-delimiters-depth-3 {
+    color: #c4b5fd;
+  }
+
+  .org-rainbow-delimiters-depth-4 {
+    color: #5eead4;
+  }
+
+  .org-rainbow-delimiters-depth-5 {
+    color: #fbbf24;
+  }
+
+  .org-rainbow-delimiters-depth-6 {
+    color: #7dd3fc;
+  }
+
+  .org-rainbow-delimiters-depth-7 {
+    color: #86efac;
+  }
+
+  .org-rainbow-delimiters-depth-8 {
+    color: #c4b5fd;
+  }
+
+  .org-rainbow-delimiters-depth-9 {
+    color: #5eead4;
+  }
+}
