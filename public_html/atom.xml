@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+  <title>blog</title>
+  <link href="https://fabcontigiani.github.io"/>
+  <link rel="self" href="https://fabcontigiani.github.io/atom.xml"/>
+  <id>https://fabcontigiani.github.io/</id>
+  <updated>2026-04-12T19:11:19Z</updated>
+  <entry>
+    <title>My First Post</title>
+    <link href="https://fabcontigiani.github.io/post/my-first-post.html"/>
+    <id>https://fabcontigiani.github.io/post/my-first-post.html</id>
+    <updated>2026-04-12T03:00:00Z</updated>
+  </entry>
+  <entry>
+    <title>About</title>
+    <link href="https://fabcontigiani.github.io/page/about.html"/>
+    <id>https://fabcontigiani.github.io/page/about.html</id>
+  </entry>
+</feed>

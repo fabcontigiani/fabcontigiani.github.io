@@ -1,0 +1,6 @@
+#+TITLE: My First Post
+#+DATE: 2026-04-12
+#+TAGS: emacs
+#+DRAFT: false
+
+Hello, world!

@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="My site">
+  <meta name="author" content="">
+  <title>About &mdash; blog</title>
+  <link rel="stylesheet" href="/static/css/style.css">
+  <link rel="alternate" type="application/rss+xml" title="blog" href="https://fabcontigiani.github.io/rss.xml">
+  <link rel="canonical" href="https://fabcontigiani.github.io/page/about.html">
+</head>
+<body>
+  <header class="site-header">
+  <a class="site-title" href="/">blog</a>
+  <nav class="site-nav">
+    <a href="/">Posts</a>
+    <a href="/tags/index.html">Tags</a>
+  </nav>
+</header>
+
+  <main>
+    <article class="page">
+  <h1>About</h1>
+  <div class="content">
+    <p>
+This is the about page.
+</p>
+
+  </div>
+</article>
+
+  </main>
+  <footer class="site-footer">
+  <p>blog &mdash; built with <a href="https://github.com/spiperac/org-grimoire">org-grimoire</a></p>
+</footer>
+
+<script>
+  document.querySelectorAll('.org-src-container').forEach(block => {
+    const btn = document.createElement('button');
+    btn.className = 'copy-btn';
+    btn.textContent = 'copy';
+    block.appendChild(btn);
+    btn.addEventListener('click', () => {
+      const code = block.querySelector('pre').innerText;
+      navigator.clipboard.writeText(code).then(() => {
+        btn.textContent = 'copied';
+        btn.classList.add('copied');
+        setTimeout(() => {
+          btn.textContent = 'copy';
+          btn.classList.remove('copied');
+        }, 2000);
+      });
+    });
+  });
+</script>
+
+</body>
+</html>

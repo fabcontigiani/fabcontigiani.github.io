@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0">
+<channel>
+  <title>blog</title>
+  <link>https://fabcontigiani.github.io</link>
+  <description>My site</description>
+  <lastBuildDate>Sun, 12 Apr 2026 19:11:19 +0000</lastBuildDate>
+  <item>
+    <title>My First Post</title>
+    <link>https://fabcontigiani.github.io/post/my-first-post.html</link>
+    <guid>https://fabcontigiani.github.io/post/my-first-post.html</guid>
+    <pubDate>Sun, 12 Apr 2026 03:00:00 +0000</pubDate>
+    <category>emacs</category>
+  </item>
+  <item>
+    <title>About</title>
+    <link>https://fabcontigiani.github.io/page/about.html</link>
+    <guid>https://fabcontigiani.github.io/page/about.html</guid>
+  </item>
+</channel>
+</rss>
