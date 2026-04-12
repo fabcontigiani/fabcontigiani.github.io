@@ -1,25 +1,36 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <feed xmlns="http://www.w3.org/2005/Atom">
-  <title>blog</title>
+  <title>fabcontigiani</title>
   <link href="https://fabcontigiani.github.io"/>
   <link rel="self" href="https://fabcontigiani.github.io/atom.xml"/>
   <id>https://fabcontigiani.github.io/</id>
-  <updated>2026-04-12T21:18:51Z</updated>
+  <updated>2026-04-12T23:40:53Z</updated>
+  <author><name>Fabrizio Contigiani</name></author>
+  <entry>
+    <title>Projects</title>
+    <link href="https://fabcontigiani.github.io/page/projects.html"/>
+    <id>https://fabcontigiani.github.io/page/projects.html</id>
+    <updated>2026-04-12T03:00:00Z</updated>
+    <author><name>Fabrizio Contigiani</name></author>
+  </entry>
   <entry>
     <title>My First Post</title>
     <link href="https://fabcontigiani.github.io/post/my-first-post.html"/>
     <id>https://fabcontigiani.github.io/post/my-first-post.html</id>
     <updated>2026-04-12T03:00:00Z</updated>
+    <author><name>Fabrizio Contigiani</name></author>
   </entry>
   <entry>
     <title>Simple.css and Org-mode Feature Demo</title>
     <link href="https://fabcontigiani.github.io/post/simple-css-demo.html"/>
     <id>https://fabcontigiani.github.io/post/simple-css-demo.html</id>
     <updated>2026-04-12T03:00:00Z</updated>
+    <author><name>Fabrizio Contigiani</name></author>
   </entry>
   <entry>
     <title>About</title>
     <link href="https://fabcontigiani.github.io/page/about.html"/>
     <id>https://fabcontigiani.github.io/page/about.html</id>
+    <author><name>Fabrizio Contigiani</name></author>
   </entry>
 </feed>

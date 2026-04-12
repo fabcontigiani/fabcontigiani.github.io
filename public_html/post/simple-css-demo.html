@@ -1,32 +1,36 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="description" content="My site">
-  <meta name="author" content="">
-  <title>Simple.css and Org-mode Feature Demo &mdash; blog</title>
+  <meta name="description" content="a blog">
+  <meta name="author" content="Fabrizio Contigiani">
+  <title>Simple.css and Org-mode Feature Demo &mdash; fabcontigiani</title>
   <link rel="stylesheet" href="https://cdn.simplecss.org/simple.min.css">
   <link rel="stylesheet" href="/static/css/style.css">
-  <link rel="alternate" type="application/rss+xml" title="blog" href="https://fabcontigiani.github.io/rss.xml">
+  <link rel="alternate" type="application/rss+xml" title="fabcontigiani" href="https://fabcontigiani.github.io/rss.xml">
   <link rel="canonical" href="https://fabcontigiani.github.io/post/simple-css-demo.html">
 </head>
+
 <body>
   <header>
-  <h1><a href="/">blog</a></h1>
   <nav>
     <a href="/">Posts</a>
+    <a href="/tags/">Tags</a>
+    <a href="/page/projects.html">Projects</a>
     <a href="/page/about.html">About</a>
   </nav>
+  <h1>fabcontigiani</h1>
+  <p>a blog</p>
 </header>
-
   <main>
     <section class="post">
   <header>
     <h1>Simple.css and Org-mode Feature Demo</h1>
     <p>
       <time class="post-date">2026-04-12</time>
-      <span class="reading-time"></span>
+      <span class="reading-time">9 min read</span>
     </p>
     <div class="grimoire-tags"><div class="grimoire-tags"><a class="grimoire-tag" href="/tags/css.html">css</a> <a class="grimoire-tag" href="/tags/web.html">web</a> <a class="grimoire-tag" href="/tags/design.html">design</a></div></div>
   </header>
@@ -39,90 +43,90 @@ This post tests many of the HTML elements styled by <a href="https://simplecss.o
 <h2>Table of Contents</h2>
 <div id="text-table-of-contents" role="doc-toc">
 <ul>
-<li><a href="#org8d4cab5">Typography</a></li>
-<li><a href="#org479c498">Headings (this is h2)</a>
+<li><a href="#org4327ca8">Typography</a></li>
+<li><a href="#org2056b3c">Headings (this is h2)</a>
 <ul>
-<li><a href="#org606c866">This is h3</a></li>
-<li><a href="#org47873c8">Inline formatting</a></li>
-<li><a href="#orgce3d5ed">Links</a></li>
-<li><a href="#org32be255">Buttons</a></li>
+<li><a href="#orgbd2e4da">This is h3</a></li>
+<li><a href="#org6a45cef">Inline formatting</a></li>
+<li><a href="#org1323885">Links</a></li>
+<li><a href="#org32cfd5d">Buttons</a></li>
 </ul>
 </li>
-<li><a href="#orge6723d3">Lists</a>
+<li><a href="#orgc7e3092">Lists</a>
 <ul>
-<li><a href="#org89983a9">Unordered lists</a></li>
-<li><a href="#orgc5e2400">Ordered lists</a></li>
-<li><a href="#org3b3a965">Description lists</a></li>
+<li><a href="#orga1d1418">Unordered lists</a></li>
+<li><a href="#org0926ff5">Ordered lists</a></li>
+<li><a href="#orgdbb2ca1">Description lists</a></li>
 </ul>
 </li>
-<li><a href="#orge950d65">Blockquotes</a></li>
-<li><a href="#org01e168d">Code blocks</a>
+<li><a href="#orgf8412ab">Blockquotes</a></li>
+<li><a href="#org374147d">Code blocks</a>
 <ul>
-<li><a href="#org8dae65a">Emacs Lisp</a></li>
-<li><a href="#org610ca38">Python</a></li>
-<li><a href="#org01e6cd5">Shell</a></li>
-<li><a href="#org254f831">CSS</a></li>
+<li><a href="#orgd735ecd">Emacs Lisp</a></li>
+<li><a href="#org145854e">Python</a></li>
+<li><a href="#org810be25">Shell</a></li>
+<li><a href="#org80374d7">CSS</a></li>
 </ul>
 </li>
-<li><a href="#orgd1b3d8b">Tables</a></li>
+<li><a href="#org8d62334">Tables</a></li>
 <li><a href="#images-section">Images</a></li>
-<li><a href="#org7564754">Advanced Developer Features</a>
+<li><a href="#org27c7682">Advanced Developer Features</a>
 <ul>
-<li><a href="#org20dbab2">Seamless Cross-Referencing</a></li>
-<li><a href="#org7f879f1">Live Code Transclusion</a></li>
-<li><a href="#org91b7ea6">Code Execution &amp; Results (Org Babel)</a></li>
+<li><a href="#org8028eda">Seamless Cross-Referencing</a></li>
+<li><a href="#org7da844a">Live Code Transclusion</a></li>
+<li><a href="#org518d48e">Code Execution &amp; Results (Org Babel)</a></li>
 </ul>
 </li>
-<li><a href="#orgc678e99">HTML5 Native Tags (Aside, Details, Notice)</a>
+<li><a href="#org8b13c8f">HTML5 Native Tags (Aside, Details, Notice)</a>
 <ul>
-<li><a href="#org6172910">Details and Accordions</a></li>
+<li><a href="#orgbb48fdc">Details and Accordions</a></li>
 </ul>
 </li>
-<li><a href="#orgba4158e">Notice Boxes</a></li>
-<li><a href="#org247cb66">Aside</a></li>
-<li><a href="#org1bb0a6e">Horizontal Rules</a></li>
-<li><a href="#org1f74b20">Layout Containers</a>
+<li><a href="#org393c869">Notice Boxes</a></li>
+<li><a href="#org6205ae3">Aside</a></li>
+<li><a href="#org94dd661">Horizontal Rules</a></li>
+<li><a href="#org549f044">Layout Containers</a>
 <ul>
-<li><a href="#orgc676222">Articles (Cards)</a></li>
-<li><a href="#org2efe099">Sections</a></li>
+<li><a href="#orged124d8">Articles (Cards)</a></li>
+<li><a href="#orgf5d7c26">Sections</a></li>
 </ul>
 </li>
-<li><a href="#org96df5ba">Testing footnotes</a></li>
+<li><a href="#org8a1402f">Testing footnotes</a></li>
 </ul>
 </div>
 </div>
-<div id="outline-container-org8d4cab5" class="outline-2">
-<h2 id="org8d4cab5">Typography</h2>
-<div class="outline-text-2" id="text-org8d4cab5">
+<div id="outline-container-org4327ca8" class="outline-2">
+<h2 id="org4327ca8">Typography</h2>
+<div class="outline-text-2" id="text-org4327ca8">
 <p>
 All the standard typography elements are supported. This paragraph is plain body text set at Simple.css's default sizing.
 </p>
 </div>
 </div>
-<div id="outline-container-org479c498" class="outline-2">
-<h2 id="org479c498">Headings (this is h2)</h2>
-<div class="outline-text-2" id="text-org479c498">
+<div id="outline-container-org2056b3c" class="outline-2">
+<h2 id="org2056b3c">Headings (this is h2)</h2>
+<div class="outline-text-2" id="text-org2056b3c">
 <p>
 Since the post title is already an <code>h1</code>, org <code>*</code> headings render as <code>h2</code>, <code>**</code> as <code>h3</code>, and so on.
 </p>
 </div>
-<div id="outline-container-org606c866" class="outline-3">
-<h3 id="org606c866">This is h3</h3>
-<div class="outline-text-3" id="text-org606c866">
+<div id="outline-container-orgbd2e4da" class="outline-3">
+<h3 id="orgbd2e4da">This is h3</h3>
+<div class="outline-text-3" id="text-orgbd2e4da">
 <p>
 Content under an h3 heading.
 </p>
 </div>
-<div id="outline-container-org26c49b0" class="outline-4">
-<h4 id="org26c49b0">This is h4</h4>
-<div class="outline-text-4" id="text-org26c49b0">
+<div id="outline-container-org2647dc7" class="outline-4">
+<h4 id="org2647dc7">This is h4</h4>
+<div class="outline-text-4" id="text-org2647dc7">
 <p>
 Content under an h4 heading.
 </p>
 </div>
-<div id="outline-container-orgf19f643" class="outline-5">
-<h5 id="orgf19f643">This is h5</h5>
-<div class="outline-text-5" id="text-orgf19f643">
+<div id="outline-container-orgf887ccd" class="outline-5">
+<h5 id="orgf887ccd">This is h5</h5>
+<div class="outline-text-5" id="text-orgf887ccd">
 <p>
 Content under an h5 heading.
 </p>
@@ -130,9 +134,9 @@ Content under an h5 heading.
 </div>
 </div>
 </div>
-<div id="outline-container-org47873c8" class="outline-3">
-<h3 id="org47873c8">Inline formatting</h3>
-<div class="outline-text-3" id="text-org47873c8">
+<div id="outline-container-org6a45cef" class="outline-3">
+<h3 id="org6a45cef">Inline formatting</h3>
+<div class="outline-text-3" id="text-org6a45cef">
 <p>
 Org-mode supports many inline styles that map to HTML elements:
 </p>
@@ -159,17 +163,17 @@ You can also combine org styles: <b><i>bold italic</i></b>, <span class="underli
 </p>
 </div>
 </div>
-<div id="outline-container-orgce3d5ed" class="outline-3">
-<h3 id="orgce3d5ed">Links</h3>
-<div class="outline-text-3" id="text-orgce3d5ed">
+<div id="outline-container-org1323885" class="outline-3">
+<h3 id="org1323885">Links</h3>
+<div class="outline-text-3" id="text-org1323885">
 <p>
 Here's a <a href="https://example.com">standard hyperlink</a>. Links are styled with the accent color and have a hover effect that removes the underline.
 </p>
 </div>
 </div>
-<div id="outline-container-org32be255" class="outline-3">
-<h3 id="org32be255">Buttons</h3>
-<div class="outline-text-3" id="text-org32be255">
+<div id="outline-container-org32cfd5d" class="outline-3">
+<h3 id="org32cfd5d">Buttons</h3>
+<div class="outline-text-3" id="text-org32cfd5d">
 <p>
 Simple.css styles <code>&lt;button&gt;</code> elements and links with the <code>button</code> class. You can just use inline HTML snippets for them safely inside paragraphs!
 </p>
@@ -182,13 +186,13 @@ Simple.css styles <code>&lt;button&gt;</code> elements and links with the <code>
 </div>
 </div>
 </div>
-<div id="outline-container-orge6723d3" class="outline-2">
-<h2 id="orge6723d3">Lists</h2>
-<div class="outline-text-2" id="text-orge6723d3">
+<div id="outline-container-orgc7e3092" class="outline-2">
+<h2 id="orgc7e3092">Lists</h2>
+<div class="outline-text-2" id="text-orgc7e3092">
 </div>
-<div id="outline-container-org89983a9" class="outline-3">
-<h3 id="org89983a9">Unordered lists</h3>
-<div class="outline-text-3" id="text-org89983a9">
+<div id="outline-container-orga1d1418" class="outline-3">
+<h3 id="orga1d1418">Unordered lists</h3>
+<div class="outline-text-3" id="text-orga1d1418">
 <p>
 A simple bulleted list:
 </p>
@@ -207,9 +211,9 @@ A simple bulleted list:
 </ul>
 </div>
 </div>
-<div id="outline-container-orgc5e2400" class="outline-3">
-<h3 id="orgc5e2400">Ordered lists</h3>
-<div class="outline-text-3" id="text-orgc5e2400">
+<div id="outline-container-org0926ff5" class="outline-3">
+<h3 id="org0926ff5">Ordered lists</h3>
+<div class="outline-text-3" id="text-org0926ff5">
 <p>
 A numbered list:
 </p>
@@ -225,9 +229,9 @@ A numbered list:
 </ol>
 </div>
 </div>
-<div id="outline-container-org3b3a965" class="outline-3">
-<h3 id="org3b3a965">Description lists</h3>
-<div class="outline-text-3" id="text-org3b3a965">
+<div id="outline-container-orgdbb2ca1" class="outline-3">
+<h3 id="orgdbb2ca1">Description lists</h3>
+<div class="outline-text-3" id="text-orgdbb2ca1">
 <dl class="org-dl">
 <dt>Emacs</dt><dd>An extensible, customizable, self-documenting text editor.</dd>
 <dt>Org-mode</dt><dd>A document editing, formatting, and organizing mode.</dd>
@@ -236,9 +240,9 @@ A numbered list:
 </div>
 </div>
 </div>
-<div id="outline-container-orge950d65" class="outline-2">
-<h2 id="orge950d65">Blockquotes</h2>
-<div class="outline-text-2" id="text-orge950d65">
+<div id="outline-container-orgf8412ab" class="outline-2">
+<h2 id="orgf8412ab">Blockquotes</h2>
+<div class="outline-text-2" id="text-orgf8412ab">
 <p>
 Sometimes you want to quote someone:
 </p>
@@ -272,16 +276,16 @@ Every technology has its dark side, but it doesn't mean we should stop innovatin
 </blockquote>
 </div>
 </div>
-<div id="outline-container-org01e168d" class="outline-2">
-<h2 id="org01e168d">Code blocks</h2>
-<div class="outline-text-2" id="text-org01e168d">
+<div id="outline-container-org374147d" class="outline-2">
+<h2 id="org374147d">Code blocks</h2>
+<div class="outline-text-2" id="text-org374147d">
 <p>
 Inline code like <code>variable-name</code> is useful, but sometimes you need a full code block.
 </p>
 </div>
-<div id="outline-container-org8dae65a" class="outline-3">
-<h3 id="org8dae65a">Emacs Lisp</h3>
-<div class="outline-text-3" id="text-org8dae65a">
+<div id="outline-container-orgd735ecd" class="outline-3">
+<h3 id="orgd735ecd">Emacs Lisp</h3>
+<div class="outline-text-3" id="text-orgd735ecd">
 <div class="org-src-container">
 <pre class="src src-emacs-lisp"><code><span class="org-rainbow-delimiters-depth-1"> (</span><span class="org-keyword">defun</span> <span class="org-function-name">hello-world</span> <span class="org-rainbow-delimiters-depth-2">()</span>
   <span class="org-doc">"Display a greeting message."</span>
@@ -293,9 +297,9 @@ Inline code like <code>variable-name</code> is useful, but sometimes you need a 
 </div>
 </div>
 </div>
-<div id="outline-container-org610ca38" class="outline-3">
-<h3 id="org610ca38">Python</h3>
-<div class="outline-text-3" id="text-org610ca38">
+<div id="outline-container-org145854e" class="outline-3">
+<h3 id="org145854e">Python</h3>
+<div class="outline-text-3" id="text-org145854e">
 <div class="org-src-container">
 <pre class="src src-python"><code><span class="org-keyword"> def</span> <span class="org-function-name">fibonacci</span><span class="org-rainbow-delimiters-depth-1">(</span>n: <span class="org-builtin">int</span><span class="org-rainbow-delimiters-depth-1">)</span> <span class="org-operator">-&gt;</span> <span class="org-builtin">list</span><span class="org-rainbow-delimiters-depth-1">[</span><span class="org-builtin">int</span><span class="org-rainbow-delimiters-depth-1">]</span>:
     <span class="org-doc">"""Generate the first n Fibonacci numbers."""</span>
@@ -312,9 +316,9 @@ Inline code like <code>variable-name</code> is useful, but sometimes you need a 
 </div>
 </div>
 </div>
-<div id="outline-container-org01e6cd5" class="outline-3">
-<h3 id="org01e6cd5">Shell</h3>
-<div class="outline-text-3" id="text-org01e6cd5">
+<div id="outline-container-org810be25" class="outline-3">
+<h3 id="org810be25">Shell</h3>
+<div class="outline-text-3" id="text-org810be25">
 <div class="org-src-container">
 <pre class="src src-bash"><code><span class="org-comment-delimiter">#</span><span class="org-comment">!/bin/</span><span class="org-keyword">bash</span><span class="org-comment">
 </span><span class="org-comment-delimiter"># </span><span class="org-comment">A simple script to greet users
@@ -332,9 +336,9 @@ Inline code like <code>variable-name</code> is useful, but sometimes you need a 
 </div>
 </div>
 </div>
-<div id="outline-container-org254f831" class="outline-3">
-<h3 id="org254f831">CSS</h3>
-<div class="outline-text-3" id="text-org254f831">
+<div id="outline-container-org80374d7" class="outline-3">
+<h3 id="org80374d7">CSS</h3>
+<div class="outline-text-3" id="text-org80374d7">
 <div class="org-src-container">
 <pre class="src src-css"><code><span class="org-css-selector">body</span> <span class="org-rainbow-delimiters-depth-1">{</span>
   <span class="org-css-property">color</span>: var<span class="org-rainbow-delimiters-depth-2">(</span><span class="org-variable-name">--text</span><span class="org-rainbow-delimiters-depth-2">)</span>;
@@ -348,9 +352,9 @@ Inline code like <code>variable-name</code> is useful, but sometimes you need a 
 </div>
 </div>
 </div>
-<div id="outline-container-orgd1b3d8b" class="outline-2">
-<h2 id="orgd1b3d8b">Tables</h2>
-<div class="outline-text-2" id="text-orgd1b3d8b">
+<div id="outline-container-org8d62334" class="outline-2">
+<h2 id="org8d62334">Tables</h2>
+<div class="outline-text-2" id="text-org8d62334">
 <p>
 Tables are automatically styled with alternating row highlights:
 </p>
@@ -568,36 +572,36 @@ You don't need raw HTML to apply classes, alternate text, or inline styles! You 
 </p>
 
 
-<div id="orgee54308" class="figure">
+<div id="org5fcd977" class="figure">
 <p><img src="https://picsum.photos/800/400.jpg" alt="A scenic mountain view" class="responsive-image" width="100%" />
 </p>
 <p><span class="figure-number">Figure 1: </span>A placeholder image demonstrating figure and caption support</p>
 </div>
 </div>
 </div>
-<div id="outline-container-org7564754" class="outline-2">
-<h2 id="org7564754">Advanced Developer Features</h2>
-<div class="outline-text-2" id="text-org7564754">
+<div id="outline-container-org27c7682" class="outline-2">
+<h2 id="org27c7682">Advanced Developer Features</h2>
+<div class="outline-text-2" id="text-org27c7682">
 <p>
 Because you are using Org-mode to build this site, you have access to some incredible tools for technical writing that standard Markdown lacks.
 </p>
 </div>
-<div id="outline-container-org20dbab2" class="outline-3">
-<h3 id="org20dbab2">Seamless Cross-Referencing</h3>
-<div class="outline-text-3" id="text-org20dbab2">
+<div id="outline-container-org8028eda" class="outline-3">
+<h3 id="org8028eda">Seamless Cross-Referencing</h3>
+<div class="outline-text-3" id="text-org8028eda">
 <p>
 You can give any section a custom ID using Org properties, just like the Images section above using <code>:CUSTOM_ID: images-section</code>. You can then cleanly link to it from anywhere: <a href="#images-section">Jump back up to the Images section</a>.
 </p>
 </div>
 </div>
-<div id="outline-container-org7f879f1" class="outline-3">
-<h3 id="org7f879f1">Live Code Transclusion</h3>
-<div class="outline-text-3" id="text-org7f879f1">
+<div id="outline-container-org7da844a" class="outline-3">
+<h3 id="org7da844a">Live Code Transclusion</h3>
+<div class="outline-text-3" id="text-org7da844a">
 <p>
 Writing tutorials? Don't copy-paste your code; it goes out of date quickly! Just include the live file directly from your repository:
 </p>
 
-<pre class="example" id="orgf56b5ab">
+<pre class="example" id="orgcd5ae04">
 #+INCLUDE: "./path/to/script.sh" src bash
 </pre>
 
@@ -606,9 +610,9 @@ When org-grimoire builds your site, it will grab the live contents of that file 
 </p>
 </div>
 </div>
-<div id="outline-container-org91b7ea6" class="outline-3">
-<h3 id="org91b7ea6">Code Execution &amp; Results (Org Babel)</h3>
-<div class="outline-text-3" id="text-org91b7ea6">
+<div id="outline-container-org518d48e" class="outline-3">
+<h3 id="org518d48e">Code Execution &amp; Results (Org Babel)</h3>
+<div class="outline-text-3" id="text-org518d48e">
 <p>
 You can tell Org to execute your code blocks during generation and embed the actual stdout into your blog. This is perfect for data science or technical blogs.
 </p>
@@ -630,9 +634,9 @@ When Org-mode evaluates the block above, it will output both the source code and
 </div>
 </div>
 </div>
-<div id="outline-container-orgc678e99" class="outline-2">
-<h2 id="orgc678e99">HTML5 Native Tags (Aside, Details, Notice)</h2>
-<div class="outline-text-2" id="text-orgc678e99">
+<div id="outline-container-org8b13c8f" class="outline-2">
+<h2 id="org8b13c8f">HTML5 Native Tags (Aside, Details, Notice)</h2>
+<div class="outline-text-2" id="text-org8b13c8f">
 <p>
 Org-mode by default exports most special blocks as <code>&lt;div&gt;</code> elements (e.g. <code>&lt;div class</code>"aside"&gt;=). To use Simple.css's native styles for <code>&lt;aside&gt;</code> and <code>&lt;details&gt;</code>, you can either use raw HTML blocks, or add a small configuration to your Emacs <code>init.el</code> to output native tags:
 </p>
@@ -652,9 +656,9 @@ Org-mode by default exports most special blocks as <code>&lt;div&gt;</code> elem
 </code></pre>
 </div>
 </div>
-<div id="outline-container-org6172910" class="outline-3">
-<h3 id="org6172910">Details and Accordions</h3>
-<div class="outline-text-3" id="text-org6172910">
+<div id="outline-container-orgbb48fdc" class="outline-3">
+<h3 id="orgbb48fdc">Details and Accordions</h3>
+<div class="outline-text-3" id="text-orgbb48fdc">
 <p>
 With the above configuration, you can use native org blocks for interactive details. You can provide the <code>&lt;summary&gt;</code> element using a small inline HTML snippet:
 </p>
@@ -694,14 +698,14 @@ If you prefer, you can still use raw HTML for accordion groups (where only one o
 </div>
 </div>
 </div>
-<div id="outline-container-orgba4158e" class="outline-2">
-<h2 id="orgba4158e">Notice Boxes</h2>
-<div class="outline-text-2" id="text-orgba4158e">
+<div id="outline-container-org393c869" class="outline-2">
+<h2 id="org393c869">Notice Boxes</h2>
+<div class="outline-text-2" id="text-org393c869">
 <p>
 You can use the native <code>#+begin_notice</code> block to create Simple.css notice boxes:
 </p>
 
-<div class="notice" id="org194a2e4">
+<div class="notice" id="orgd5c0716">
 <p>
 This is a notice box written with a native org special block. It's useful for calling out important snippets of information to your readers.
 </p>
@@ -709,9 +713,9 @@ This is a notice box written with a native org special block. It's useful for ca
 </div>
 </div>
 </div>
-<div id="outline-container-org247cb66" class="outline-2">
-<h2 id="org247cb66">Aside</h2>
-<div class="outline-text-2" id="text-org247cb66">
+<div id="outline-container-org6205ae3" class="outline-2">
+<h2 id="org6205ae3">Aside</h2>
+<div class="outline-text-2" id="text-org6205ae3">
 <p>
 With the Emacs Lisp advice above, you can write native <code>#+begin_aside</code> blocks:
 </p>
@@ -733,9 +737,9 @@ Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor i
 </p>
 </div>
 </div>
-<div id="outline-container-org1bb0a6e" class="outline-2">
-<h2 id="org1bb0a6e">Horizontal Rules</h2>
-<div class="outline-text-2" id="text-org1bb0a6e">
+<div id="outline-container-org94dd661" class="outline-2">
+<h2 id="org94dd661">Horizontal Rules</h2>
+<div class="outline-text-2" id="text-org94dd661">
 <p>
 You can separate sections with a horizontal rule:
 </p>
@@ -747,16 +751,16 @@ Content continues after the rule.
 </p>
 </div>
 </div>
-<div id="outline-container-org1f74b20" class="outline-2">
-<h2 id="org1f74b20">Layout Containers</h2>
-<div class="outline-text-2" id="text-org1f74b20">
+<div id="outline-container-org549f044" class="outline-2">
+<h2 id="org549f044">Layout Containers</h2>
+<div class="outline-text-2" id="text-org549f044">
 <p>
 With the Emacs Lisp hook included above, you can also inject native <code>&lt;article&gt;</code> and <code>&lt;section&gt;</code> tags directly into your post!
 </p>
 </div>
-<div id="outline-container-orgc676222" class="outline-3">
-<h3 id="orgc676222">Articles (Cards)</h3>
-<div class="outline-text-3" id="text-orgc676222">
+<div id="outline-container-orged124d8" class="outline-3">
+<h3 id="orged124d8">Articles (Cards)</h3>
+<div class="outline-text-3" id="text-orged124d8">
 <p>
 Simple.css styles the <code>&lt;article&gt;</code> element like a distinct "Card". It provides special typography for the first heading inside it (<code>margin-top: 1rem</code>). 
 </p>
@@ -775,9 +779,9 @@ Notice how the heading now perfectly matches the Simple.css demo page!
 </article>
 </div>
 </div>
-<div id="outline-container-org2efe099" class="outline-3">
-<h3 id="org2efe099">Sections</h3>
-<div class="outline-text-3" id="text-org2efe099">
+<div id="outline-container-orgf5d7c26" class="outline-3">
+<h3 id="orgf5d7c26">Sections</h3>
+<div class="outline-text-3" id="text-orgf5d7c26">
 <p>
 Similarly, Simple.css styles the <code>&lt;section&gt;</code> element with thick top and bottom dividers and specifically tightened typography for the leading header.
 </p>
@@ -793,9 +797,9 @@ You can use these to break very long tutorials into distinctly separated visual 
 </div>
 </div>
 </div>
-<div id="outline-container-org96df5ba" class="outline-2">
-<h2 id="org96df5ba">Testing footnotes</h2>
-<div class="outline-text-2" id="text-org96df5ba">
+<div id="outline-container-org8a1402f" class="outline-2">
+<h2 id="org8a1402f">Testing footnotes</h2>
+<div class="outline-text-2" id="text-org8a1402f">
 <p>
 Simple.css also handles footnote styling well. Here's a sentence with a footnote<sup><a id="fnr.1" class="footref" href="#fn.1" role="doc-backlink">1</a></sup> and another one<sup><a id="fnr.2" class="footref" href="#fn.2" role="doc-backlink">2</a></sup>.
 </p>
@@ -839,28 +843,42 @@ Footnotes are great for citations and tangential information without cluttering 
 
   </main>
   <footer>
-  <p>blog &mdash; built with <a href="https://github.com/spiperac/org-grimoire">org-grimoire</a></p>
+  <p>fabcontigiani &mdash; built with <a href="https://github.com/spiperac/org-grimoire">org-grimoire</a></p>
 </footer>
 
-<script>
-  document.querySelectorAll('.org-src-container').forEach(block => {
-    const btn = document.createElement('button');
-    btn.className = 'copy-btn';
-    btn.textContent = 'copy';
-    block.appendChild(btn);
-    btn.addEventListener('click', () => {
-      const code = block.querySelector('pre').innerText;
-      navigator.clipboard.writeText(code).then(() => {
-        btn.textContent = 'copied';
-        btn.classList.add('copied');
-        setTimeout(() => {
-          btn.textContent = 'copy';
-          btn.classList.remove('copied');
-        }, 2000);
+  <script>
+    // Highlight current navbar link
+    document.querySelectorAll('nav a').forEach(link => {
+      const href = link.getAttribute('href');
+      const path = window.location.pathname;
+      
+      if (path === href || 
+          path === href + 'index.html' || 
+          (href !== '/' && path.startsWith(href))) {
+        link.classList.add('current');
+      }
+    });
+
+    // Copy button logic
+    document.querySelectorAll('.org-src-container').forEach(block => {
+      const btn = document.createElement('button');
+      btn.className = 'copy-btn';
+      btn.textContent = 'copy';
+      block.appendChild(btn);
+      btn.addEventListener('click', () => {
+        const code = block.querySelector('pre').innerText;
+        navigator.clipboard.writeText(code).then(() => {
+          btn.textContent = 'copied';
+          btn.classList.add('copied');
+          setTimeout(() => {
+            btn.textContent = 'copy';
+            btn.classList.remove('copied');
+          }, 2000);
+        });
       });
     });
-  });
-</script>
+  </script>
 
 </body>
+
 </html>

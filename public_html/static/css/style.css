@@ -114,10 +114,17 @@
   border-color: #16a34a;
 }
 
+/* ── Navbar ─────────────────────────────────────────────────────── */
+nav a.current {
+  color: var(--accent);
+  border-color: var(--accent);
+}
+
 /* ── Post listing ───────────────────────────────────────────────── */
 .post-list {
   list-style: none;
   padding: 0;
+  margin-bottom: 0;
 }
 
 .post-item {
@@ -130,6 +137,7 @@
 
 .post-item:last-child {
   border-bottom: none;
+  padding-bottom: 0;
 }
 
 .post-item-title {
@@ -222,7 +230,7 @@ table {
 .pagination {
   display: flex;
   justify-content: space-between;
-  margin-top: 2.5rem;
+  margin-top: 1.5rem;
   padding-top: 1rem;
   border-top: 1px solid var(--border);
   font-size: 0.9rem;
