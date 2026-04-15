@@ -1,18 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <rss version="2.0">
 <channel>
-  <title>fabcontigiani</title>
+  <title>fabcontigiani's blog</title>
   <link>https://fabcontigiani.github.io</link>
-  <description>a blog</description>
-  <lastBuildDate>Sun, 12 Apr 2026 23:40:53 +0000</lastBuildDate>
-  <item>
-    <title>Projects</title>
-    <link>https://fabcontigiani.github.io/page/projects.html</link>
-    <guid>https://fabcontigiani.github.io/page/projects.html</guid>
-    <pubDate>Sun, 12 Apr 2026 03:00:00 +0000</pubDate>
-    <category>projects</category>
-    <category>tech</category>
-  </item>
+  <description>Where parentheses are balanced and thoughts are not</description>
+  <lastBuildDate>Wed, 15 Apr 2026 03:28:01 +0000</lastBuildDate>
   <item>
     <title>My First Post</title>
     <link>https://fabcontigiani.github.io/post/my-first-post.html</link>
@@ -33,6 +25,16 @@
     <title>About</title>
     <link>https://fabcontigiani.github.io/page/about.html</link>
     <guid>https://fabcontigiani.github.io/page/about.html</guid>
+  </item>
+  <item>
+    <title>Contact</title>
+    <link>https://fabcontigiani.github.io/page/contact.html</link>
+    <guid>https://fabcontigiani.github.io/page/contact.html</guid>
+  </item>
+  <item>
+    <title>Projects</title>
+    <link>https://fabcontigiani.github.io/page/projects.html</link>
+    <guid>https://fabcontigiani.github.io/page/projects.html</guid>
   </item>
 </channel>
 </rss>

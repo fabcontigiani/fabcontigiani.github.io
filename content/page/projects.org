@@ -1,6 +1,3 @@
 #+TITLE: Projects
-#+DATE: 2026-04-12
-#+TAGS: projects, tech
-#+DRAFT: nil
 #+LISTED: nil
 
