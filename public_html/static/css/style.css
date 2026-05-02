@@ -199,6 +199,11 @@ table {
   text-decoration: none;
 }
 
+.grimoire-tag:visited {
+  color: var(--text-light);
+  border-color: var(--border);
+}
+
 .grimoire-tag:hover {
   color: var(--accent);
   border-color: var(--accent);
